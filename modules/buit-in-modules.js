@@ -1,5 +1,7 @@
-module.exports.builtInModules = () =>
-  `
+module.exports.builtInModules = () => {
+
+  // console.log(module);
+  return `
   <html>
     <head>
       <title>Node.js Tutorial</title>
@@ -20,3 +22,28 @@ module.exports.builtInModules = () =>
     </body>
   </html>
   `;
+}
+
+// The difference between module.exports and exports?
+// module.exports is a property of the module object.
+// If you console.log()...
+/*
+Module {
+  id: '/Users/miyabi/Desktop/desktop-folders/wmad/nodejs-course/w1_weekly_assignment/nodejs_tutorial/modules/buit-in-modules.js',
+  path: '/Users/miyabi/Desktop/desktop-folders/wmad/nodejs-course/w1_weekly_assignment/nodejs_tutorial/modules',
+  exports: { builtInModules: [Function] },
+  parent: Module {
+    id: '.',
+    path: '/Users/miyabi/Desktop/desktop-folders/wmad/nodejs-course/w1_weekly_assignment/nodejs_tutorial',
+    exports: {},
+    parent: null,
+    filename: '/Users/miyabi/Desktop/desktop-folders/wmad/nodejs-course/w1_weekly_assignment/nodejs_tutorial/index.js',
+    loaded: true,
+    children: [ [Circular], [Module], [Module] ],
+    ...
+ */
+
+// module.exports... If the content to be exported is an object, but it can be anything.
+// exports... Can not export an object
+
+// the best is to use module.exports!
