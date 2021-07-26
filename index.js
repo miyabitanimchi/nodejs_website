@@ -2,12 +2,10 @@ const http = require("http");
 const port = 5050;
 const builtInModule = require("./modules/buit-in-modules");
 const dateModule = require("./modules/your-own-modules/date");
+const areaOfCircleModule = require("./modules/your-own-modules/areaOfCircle")
 // const usersMod = require("./fetchAPI-module");
 
 const server = http.createServer((req, res) => {
-  // res.statusCode = 200;
-  // res.setHeader("Content-Type", "text/html");
-  // res.writeHead(200, { 'Content-Type': 'text/plain' });
   res.writeHead(200, { "Content-Type": "text/html" });
   switch (req.url) {
     case "/":
@@ -39,14 +37,8 @@ const server = http.createServer((req, res) => {
             <a href="./your-own-modules">Your Own Modules</a>
             <h1>Node.js Tutorial</h1>
             <h2>Node.js Your Own Modules</h2>
-            <p>Today's Date: <span>${dateModule.date()}</span></p>
-            <div>
-              <label>Power</label>
-              <input type="text"/>
-              <input type="text"/>
-              <button>calculate</button>
-              <p></p>
-            </div>
+            <p>Today's Date: <span style="color: red">${dateModule.date()}</span></p>
+              <p>The area of a circle of radius 3 is <span style="color: red">${areaOfCircleModule.areaOfCircle(3)}</span></p>
             <a href="./">Go Back to Main Page</a>
           </body>
         </html>`
